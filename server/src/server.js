@@ -3,7 +3,7 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-// import { corsOptions } from "~/config/corsOptions";
+import { corsOptions } from "~/config/corsOptions";
 import { APIs_V1 } from "~/routes/v1/";
 import { APIs_V2 } from "~/routes/v2/";
 
@@ -21,7 +21,7 @@ const START_SERVER = () => {
 	app.use(cookieParser());
 
 	// Allow CORS: for more info, check here: https://youtu.be/iYgAWJ2Djkw
-	// app.use(cors(corsOptions));
+	app.use(cors(corsOptions));
 
 	// Enable req.body json data
 	app.use(express.json());
