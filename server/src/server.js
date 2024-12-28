@@ -7,6 +7,7 @@ import { corsOptions } from "~/config/corsOptions";
 import { APIs_V1 } from "~/routes/v1";
 import { APIs_V2 } from "~/routes/v2";
 import { env } from "~/config/enviroment";
+import "~/models";
 
 const START_SERVER = () => {
 	// Init Express App
