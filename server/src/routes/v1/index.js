@@ -2,6 +2,7 @@ import express from "express";
 import { StatusCodes } from "http-status-codes";
 import { DashboardRoute } from "./dashboardRoute";
 import { UserRoute } from "./userRoute";
+import { TestRoute } from "./testRoute";
 
 const Router = express.Router();
 
@@ -12,5 +13,6 @@ Router.get("/status", (req, res) => {
 
 Router.use("/users", UserRoute);
 Router.use("/dashboards", DashboardRoute);
+Router.use("/test", TestRoute);
 
 export const APIs_V1 = Router;
