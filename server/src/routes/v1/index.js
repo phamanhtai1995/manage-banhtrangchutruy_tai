@@ -1,7 +1,7 @@
 import express from "express";
 import { StatusCodes } from "http-status-codes";
-import { DashboardRoute } from "./dashboardRoute.js";
-import { UserRoute } from "./userRoute.js";
+import { DashboardRoute } from "./dashboardRoute";
+import { UserRoute } from "./userRoute";
 
 const Router = express.Router();
 
