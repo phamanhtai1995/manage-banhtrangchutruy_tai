@@ -7,6 +7,7 @@ import { corsOptions } from "~/config/corsOptions";
 import { APIs_V1 } from "~/routes/v1";
 import { APIs_V2 } from "~/routes/v2";
 import { env } from "~/config/enviroment";
+import morgan from "morgan";
 import "~/models";
 
 const START_SERVER = () => {
@@ -18,6 +19,8 @@ const START_SERVER = () => {
 		res.set("Cache-Control", "no-store");
 		next();
 	});
+
+	app.use(morgan("dev"));
 
 	// Use Cookie
 	app.use(cookieParser());

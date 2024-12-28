@@ -1,8 +1,9 @@
 import express from "express";
 import { StatusCodes } from "http-status-codes";
-import { DashboardRoute } from "./dashboardRoute";
-import { UserRoute } from "./userRoute";
-import { TestRoute } from "./testRoute";
+import { DashboardRoute } from "./dashboard.route";
+import { UserRoute } from "./user.route";
+import { TestRoute } from "./test.route";
+import { RoleRoute } from "./role.route";
 
 const Router = express.Router();
 
@@ -14,5 +15,6 @@ Router.get("/status", (req, res) => {
 Router.use("/users", UserRoute);
 Router.use("/dashboards", DashboardRoute);
 Router.use("/test", TestRoute);
+Router.use("/role", RoleRoute);
 
 export const APIs_V1 = Router;

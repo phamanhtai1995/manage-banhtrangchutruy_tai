@@ -1,16 +1,18 @@
-import { User } from "./user.model";
-import { Test } from "./test.model";
+import { UserModel } from "./user.model";
+import { TestModel } from "./test.model";
+import { RoleModel } from "./role.model";
 
 const models = {
-	UserModel: User,
-	TestModel: Test,
+	RoleModel,
+	UserModel,
+	TestModel,
 };
 
 (async () => {
 	try {
 		for (const key in models) {
 			models[key]
-				.sync()
+				.sync({ alter: true })
 				.then(() => {
 					console.log(`${key} created success !!!`);
 				})
@@ -23,4 +25,4 @@ const models = {
 	}
 })();
 
-export { User, Test };
+export { UserModel, TestModel, RoleModel };

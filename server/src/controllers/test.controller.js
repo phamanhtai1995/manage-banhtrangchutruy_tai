@@ -1,11 +1,10 @@
 import { StatusCodes } from "http-status-codes";
-import { Test } from "~/models";
+import { TestModel } from "~/models";
 
 const create = async (req, res) => {
 	try {
 		const payload = req.body;
-
-		await Test.create({ ...payload });
+		await TestModel.create({ ...payload });
 
 		res.status(StatusCodes.OK).json({ message: "create success !" });
 	} catch (error) {
@@ -15,9 +14,9 @@ const create = async (req, res) => {
 
 const findAll = async (req, res) => {
 	try {
-		const responseData = await Test.findAll();
+		const responseData = await TestModel.findAll();
 
-		return res.status(StatusCodes.OK).json(responseData);
+		res.status(StatusCodes.OK).json(responseData);
 	} catch (error) {
 		res.status(StatusCodes.INTERNAL_SERVER_ERROR).json(error);
 	}
